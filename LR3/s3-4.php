@@ -1,5 +1,5 @@
 <html>
-    <title>Пупков Егор андреевич</title>
+    <title>Пупков Егор Андреевич</title>
     <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
     <body>
         <form method="POST" action="<?php print $PHP_SELF ?>">

@@ -14,6 +14,7 @@
             <input type="submit" name="prov" value="Проверить"> <br>
         
         <?php
+        if (isset($_POST["N"])) {
         if ($_POST["N"] > 1) {
             switch ($_POST["z"]) {
                 case 1: // чётное
@@ -59,6 +60,7 @@
                 
             }
         } 
+    }
         ?>
     </body>
 </html>
