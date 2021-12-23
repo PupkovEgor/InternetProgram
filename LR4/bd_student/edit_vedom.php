@@ -20,7 +20,7 @@ ocenka FROM zach_vedom WHERE id_vedom=".$_GET['id_vedom']);
         }
 
 print "<form action='save_edit_vedom.php' metod='get'>";
-print "Дата: <input name='data' size='20' type='date' value='".$data."'>";
+print "Дата: <input name='vedom_data' size='20' type='date' value='".$vedom_data."'>";
 print "<br>Студент: <input name='id_stud' size='5' type='text' value='".$id_stud."'>";
 print "<br>Предмет: <input name='id_predm' size='5' type='text' value='".$id_predm."'>";
 print "<br>Оценка: <input name='ocenka' size='5' type='text' value='".$ocenka."'>";

@@ -60,7 +60,7 @@ print("<P>Всего предметов: $num_rows </p>");
 <table border="1">
 <tr>  
     <!-- вывод «шапки» таблицы -->
-<th> Имя студента </th> <th> Название предмета </th> <th> Оценка </th>
+<th> ИД студента </th> <th> ИД предмета </th> <th> Оценка </th>
 <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
 $result=mysqli_query($mysqli,"SELECT id_vedom, id_stud, id_predm, ocenka FROM zach_vedom"); // запрос на выборку сведений о пользователях
