@@ -37,7 +37,7 @@ print("<P>Всего пользователей: $num_rows </p>");
 <h2>Предметы:</h2>
 <table border="1">
 <tr>  
-    <!-- вывод «шапки» таблицы -->
+<!-- вывод «шапки» таблицы -->
 <th> Предмет </th> <th> Преподаватель </th>
 <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
@@ -78,5 +78,7 @@ $num_rows = mysqli_num_rows($result); // число записей в табли
 print("<P>Всего ведомостей: $num_rows </p>");
 ?>
 <p> <a href="new_vedom.php"> Добавить ведомость </a>
+<p> <a href="gen_pdf.php"> Создать PDF </a>
+<p> <a href="gen_xls.php"> Создать XLS </a>
 </body> 
 </html>
