@@ -4,6 +4,7 @@
 </head>
 <body>
 <?php
+include("check.php");
 $mysqli = new mysqli("localhost", "root");
 mysqli_connect("localhost","root","") or die ("Невозможно подключиться к серверу");
 mysqli_query($mysqli, 'SET NAMES utf-8');
@@ -23,7 +24,7 @@ print "<br>Факультет: <input name='prepod_name' size='30' type='text' v
 print "<input type='hidden' name='id_predm' value='".$id."'> <br>";
 print "<input type='submit' name='' value='Сохранить'>";
 print "</form>";
-print "<p><a href=\"index.php\"> Вернуться к списку пользователей </a>";
+print "<p><a href=\"tables.php\"> Вернуться к списку пользователей </a>";
 ?>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <?php
+include("check.php");
 // Подключение к базе данных:
 $mysqli = new mysqli("localhost", "root");
 mysqli_connect("localhost","root","") or die ("Невозможно подключиться к серверу");
@@ -12,6 +13,6 @@ $sql_add = "INSERT INTO student SET stud_name='" . $_GET['name']
 mysqli_query($mysqli, $sql_add); // Выполнение запроса
 if (mysqli_affected_rows($mysqli)>0) // если нет ошибок при выполнении запроса
 { print "<p>Студент добавлен в базу данных.";
-print "<p><a href=\"index.php\"> Вернуться к списку студентов </a>"; }
-else { print "Ошибка сохранения. <a href=\"index.php\"> Вернуться к списку студентов </a>"; }
+print "<p><a href=\"tables.php\"> Вернуться к списку студентов </a>"; }
+else { print "Ошибка сохранения. <a href=\"tables.php\"> Вернуться к списку студентов </a>"; }
 ?>

@@ -1,4 +1,5 @@
 <?
+include("check.php");
 require_once('tcpdf/tcpdf.php');
 //require_once('tcpdf/include/tcpdf_fonts.php');
 

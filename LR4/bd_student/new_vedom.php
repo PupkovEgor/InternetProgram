@@ -14,6 +14,6 @@
 <input name="b2" type="reset" value="Очистить"></p>
 </form>
 <p>
-<a href="index.php"> Вернуться к списку ведомостей </a>
+<a href="tables.php"> Вернуться к списку ведомостей </a>
 </body>
 </html>

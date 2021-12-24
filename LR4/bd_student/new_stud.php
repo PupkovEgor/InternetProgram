@@ -15,6 +15,6 @@
 <input name="b2" type="reset" value="Очистить"></p>
 </form>
 <p>
-<a href="index.php"> Вернуться к списку пользователей </a>
+<a href="tables.php"> Вернуться к списку пользователей </a>
 </body>
 </html>

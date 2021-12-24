@@ -1,4 +1,5 @@
 <?php
+include("check.php");
 require_once('PHPExcel/Classes/PHPExcel.php');
 require_once('PHPExcel/Classes/PHPExcel/Writer/Excel2007.php');
 

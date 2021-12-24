@@ -4,6 +4,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
+<?
+include("check.php");
+?>
 <H2>Добавление предмета:</H2>
 <form action="save_new_predm.php" metod="get">
 Название: <input name="predm_name" size="30" type="text">
@@ -12,6 +15,6 @@
 <input name="b2" type="reset" value="Очистить"></p>
 </form>
 <p>
-<a href="index.php"> Вернуться к списку предметов </a>
+<a href="tables.php"> Вернуться к списку предметов </a>
 </body>
 </html>
