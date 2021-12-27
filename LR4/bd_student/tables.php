@@ -16,15 +16,16 @@ include("check.php");
 <table border="1">
 <tr>  
     <!-- вывод «шапки» таблицы -->
-<th> Имя </th> <th> Номер зачётки </th> <th>Группа</th>
+<th> Имя </th> <th> Номер зачётки </th> <th>Группа</th> <th>Номер телефона</th>
 <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
-$result=mysqli_query($mysqli,"SELECT id_stud, stud_name, stud_no_zk, stud_group FROM student"); // запрос на выборку сведений о пользователях
+$result=mysqli_query($mysqli,"SELECT id_stud, stud_name, stud_no_zk, stud_group, stud_phone FROM student"); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
 echo "<tr>";
 echo "<td>" . $row['stud_name'] . "</td>";
 echo "<td>" . $row['stud_no_zk'] . "</td>";
 echo "<td>" . $row['stud_group'] . "</td>";
+echo "<td>" . $row['stud_phone'] . "</td>";
 echo "<td><a href='edit_stud.php?id_stud=" . $row['id_stud'] . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
 echo "<td><a href='delete_stud.php?id_stud=" . $row['id_stud'] . "'>Удалить</a></td>"; // запуск скрипта для удаления записи
 echo "</tr>";
@@ -61,26 +62,47 @@ print("<P>Всего предметов: $num_rows </p>");
 <table border="1">
 <tr>  
     <!-- вывод «шапки» таблицы -->
-<th> ИД студента </th> <th> ИД предмета </th> <th> Оценка </th>
+<th>Дата</th> <th> Студент </th> <th> Предмет </th> <th> Оценка </th>
 <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
-$result=mysqli_query($mysqli,"SELECT id_vedom, id_stud, id_predm, ocenka FROM zach_vedom"); // запрос на выборку сведений о пользователях
+$result=mysqli_query($mysqli,"SELECT 
+                                zach_vedom.id_vedom, 
+                                zach_vedom.vedom_data,
+                                zach_vedom.ocenka, 
+
+                                student.id_stud as id_stud, 
+                                student.stud_name as stud_name, 
+
+                                predm.id_predm as id_predm, 
+                                predm.predm_name as predm_name 
+
+                                FROM zach_vedom 
+                                LEFT JOIN student ON zach_vedom.id_stud = student.id_stud 
+                                LEFT JOIN predm ON zach_vedom.id_predm = predm.id_predm" 
+                                );
+                                
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
+$data = date('d-m-Y', strtotime($row['vedom_data']));
 echo "<tr>";
-echo "<td>" . $row['id_stud'] . "</td>";
-echo "<td>" . $row['id_predm'] . "</td>";
+echo "<td>" . $data . "</td>";
+echo "<td>" . $row['stud_name'] . "</td>";
+echo "<td>" . $row['predm_name'] . "</td>";
 echo "<td>" . $row['ocenka'] . "</td>";
 echo "<td><a href='edit_vedom.php?id_vedom=" . $row['id_vedom'] . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
 echo "<td><a href='delete_vedom.php?id_vedom=" . $row['id_vedom'] . "'>Удалить</a></td>"; // запуск скрипта для удаления записи
 echo "</tr>";
 }
 print "</table>";
+if ($_SESSION['type'] == 1) {
+    $path = "menuOper.php";
+} else $path = "menuAdmin.php";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
 print("<P>Всего ведомостей: $num_rows </p>");
 ?>
 <p> <a href="new_vedom.php"> Добавить ведомость </a>
 <p> <a href="gen_pdf.php"> Создать PDF </a>
 <p> <a href="gen_xls.php"> Создать XLS </a>
+<? print "<p> <a href = '". $path . "'> Перейти в меню </a>"; ?>
 <form action="exit.php" method="get">
 <input type="submit" name="exit" value="Выйти">
 </form>

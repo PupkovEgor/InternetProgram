@@ -6,6 +6,9 @@
 <body>
 <H2>Добавление пользователя:</H2>
 <form action="save_new_user.php" metod="get">
+<?
+include('check.php');
+?>
 Логин: <input name="username" size="20" type="text">
 <br>Пароль: <input name="password" size="20" type="password">
 <br>Тип: <input name="type" size="1" type="text">

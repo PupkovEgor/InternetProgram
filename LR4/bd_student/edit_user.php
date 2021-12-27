@@ -10,7 +10,7 @@ mysqli_connect("localhost","root","") or die ("Невозможно подклю
 mysqli_query($mysqli, 'SET NAMES utf-8');
 mysqli_select_db($mysqli, "students") or die("Нет такой таблицы!");
 $rows=mysqli_query($mysqli, "SELECT username, password, type
-FROM users WHERE id=".$_SESSION['id']);
+FROM users WHERE id=".$_GET['id']);
 
 if ($_SESSION['type'] == 2) {
 while ($st = mysqli_fetch_array($rows)) {
@@ -22,7 +22,7 @@ while ($st = mysqli_fetch_array($rows)) {
 
 print "<form action='save_edit_user.php' metod='get'>";
 print "Логин: <input name='username' size='10' type='text' value='".$username."'>";
-print "<br>Пароль: <input name='password' size='10' type='password' value=''>";
+print "<br>Новый пароль: <input name='password' size='10' type='password' value=''>";
 print "<br>Тип: <input name='type' size='1' type='text' value='".$type."'>";
 print "<input type='hidden' name='id' value='".$id."'> <br>";
 print "<input type='submit' name='' value='Сохранить'>";

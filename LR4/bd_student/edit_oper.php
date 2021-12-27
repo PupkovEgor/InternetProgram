@@ -24,7 +24,7 @@ print "<br>Пароль: <input name='password' size='10' type='password' value=
 print "<input type='hidden' name='id' value='".$id."'> <br>";
 print "<input type='submit' name='' value='Сохранить'>";
 print "</form>";
-print "<p><a href=\"menuOper.php\"> Вернуться к списку пользователей </a>";
+print "<p><a href=\"menuOper.php\"> Вернуться к меню</a>";
 ?>
 </body>
 </html>

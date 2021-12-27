@@ -6,6 +6,9 @@
 <body>
 <H2>Добавление студента:</H2>
 <form action="save_new_stud.php" metod="get">
+<?
+include('check.php');
+?>
 ФИО: <input name="name" size="50" type="text">
 <br>Факультет: <input name="faculty" size="20" type="text">
 <br>Группа: <input name="group" size="20" type="text">

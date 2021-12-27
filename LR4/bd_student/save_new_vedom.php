@@ -6,7 +6,7 @@ mysqli_connect("localhost","root","") or die ("Невозможно подклю
 mysqli_query($mysqli, 'SET NAMES utf-8'); // Тип кодировки
 mysqli_select_db($mysqli, "students") or die("Нет такой таблицы!");
 // Строка запроса на добавление записи в таблицу:
-$sql_add = "INSERT INTO zach_vedom SET vedom_data='" . $_GET['vedom_data'] 
+$sql_add = "INSERT INTO zach_vedom SET vedom_data='" . $_GET['vedom_data']
 ."', id_stud='".$_GET['id_stud']."', id_predm='" 
 .$_GET['id_predm']."', ocenka='".$_GET['ocenka']."'";
 mysqli_query($mysqli, $sql_add); // Выполнение запроса

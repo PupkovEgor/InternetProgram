@@ -4,11 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
+<H2>Добавление предмета:</H2>
+<form action="save_new_predm.php" metod="get">
 <?
 include("check.php");
 ?>
-<H2>Добавление предмета:</H2>
-<form action="save_new_predm.php" metod="get">
 Название: <input name="predm_name" size="30" type="text">
 <br>Преподаватель: <input name="prepod_name" size="30" type="text">
 <p><input name="add" type="submit" value="Добавить">
